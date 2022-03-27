@@ -30,13 +30,13 @@ app.post('/image', upload.single('file'), function (req, res) {
 })
 
 imageHash
-  .hash('SanjanaS.jpg', 8, 'binary')
+  .hash('SanjanaS.jpg', 8, 'binary')          //returning a promise
   .then((hash1) => {
     //console.log(hash1);
     arr[0]=hash1.hash;
     //console.log(arr[0]);
 
-    imageHash.hash('ethereumsynopsis.png', 8, 'binary').then((hash2) => {
+    imageHash.hash('/uploads/1.JPG', 8, 'binary').then((hash2) => {
       img2=hash2.hash;
        console.log(img2);
       arr[1]=hash2.hash;
